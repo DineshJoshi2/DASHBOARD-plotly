@@ -77,14 +77,14 @@ app.layout = html.Div(children=[ html.H1('Marshyandi River Discharge Simulation'
 
                                 html.Br(),
                                 ###
-                                dcc.Graph(id='Test_Run1'),
-                                html.Br(),
-                                dcc.Graph(id='Test_Run2'),
-                                html.Br(),
-                                dcc.Graph(id='Test_Run3'),
-                                html.Br(),
-                                dcc.Graph(id='Test_Run4'),
-                                html.Br(),
+                                #dcc.Graph(id='Test_Run1'),
+                                #html.Br(),
+                                #dcc.Graph(id='Test_Run2'),
+                                #html.Br(),
+                                #dcc.Graph(id='Test_Run3'),
+                                #html.Br(),
+                                #dcc.Graph(id='Test_Run4'),
+                                #html.Br(),
                                 dcc.Graph(id='Test_Run5'),
                                 html.Br(),
                                 dcc.Graph(id='Test_Run6'),
@@ -104,10 +104,10 @@ app.layout = html.Div(children=[ html.H1('Marshyandi River Discharge Simulation'
 # Callback decorator
 @app.callback([
     Output(component_id='NSE', component_property='children'),
-    Output(component_id='Test_Run1', component_property='figure'),
-    Output(component_id='Test_Run2', component_property='figure'),
-    Output(component_id='Test_Run3', component_property='figure'),
-    Output(component_id='Test_Run4', component_property='figure'),
+    #Output(component_id='Test_Run1', component_property='figure'),
+    #Output(component_id='Test_Run2', component_property='figure'),
+    #Output(component_id='Test_Run3', component_property='figure'),
+    #Output(component_id='Test_Run4', component_property='figure'),
     Output(component_id='Test_Run5', component_property='figure'),
     Output(component_id='Test_Run6', component_property='figure'),
     Output(component_id='Test_Run7', component_property='figure'),
@@ -122,10 +122,10 @@ Input(component_id='select model', component_property='value'))
 # Computation to callback function and return graph
 def get_graph(Model):
     NSE= "The Average Nash–Sutcliffe for 10 fold Cross Validation is "    +str(round(np.mean(Data[Model]["NSE"]["NSE_Test"]),2))
-    fig1 = lineplot(Model,"Test_run1")
-    fig2 = lineplot(Model,"Test_run2")
-    fig3 = lineplot(Model,"Test_run3")
-    fig4 = lineplot(Model,"Test_run4")
+    #fig1 = lineplot(Model,"Test_run1")
+    #fig2 = lineplot(Model,"Test_run2")
+    #fig3 = lineplot(Model,"Test_run3")
+    #fig4 = lineplot(Model,"Test_run4")
     fig5 = lineplot(Model,"Test_run5")
     fig6 = lineplot(Model,"Test_run6")
     fig7 = lineplot(Model,"Test_run7")
@@ -134,7 +134,7 @@ def get_graph(Model):
     fig10 = lineplot(Model,"Test_run10")
     fig11= reg_test_discharge_fig(Model)
     ###
-    return[NSE,fig1,fig2,fig3,fig4,fig5,fig6,fig7,fig8,fig9,fig10,fig11]
+    return[NSE,fig5,fig6,fig7,fig8,fig9,fig10,fig11]
 # Run the app
 if __name__ == '__main__':
     app.run_server(mode='inline', port=8030)
