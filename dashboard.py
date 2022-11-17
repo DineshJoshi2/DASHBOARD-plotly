@@ -157,7 +157,7 @@ def Dashboard():
         return[NSE,fig1,fig2,fig3,fig4,fig5,fig6,fig7,fig8,fig9,fig10,fig11]
     # Run the app
     if __name__ == '__main__':
-        return app.run_server()
+        return app.run_server(mode='inline', port=8030)
 
 
 # In[ ]:
