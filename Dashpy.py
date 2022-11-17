@@ -121,7 +121,7 @@ Input(component_id='select model', component_property='value'))
 
 # Computation to callback function and return graph
 def get_graph(Model):
-    NSE= "The Average Nash–Sutcliffe for 10 fold Cross Validation is "    +str(round(np.mean(Data[Model]["NSE"]["NSE_Test"]),2))
+    NSE= "The Average Nash–Sutcliffe "+str(round(np.mean(Data[Model]["NSE"]["NSE_Test"][4:),2))
     #fig1 = lineplot(Model,"Test_run1")
     #fig2 = lineplot(Model,"Test_run2")
     #fig3 = lineplot(Model,"Test_run3")
