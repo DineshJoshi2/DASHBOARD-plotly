@@ -1,17 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[316]:
-
-
-get_ipython().system('pip install -q jupyter_dash==0.3.0')
-
-
-# In[317]:
-
-
-get_ipython().system('pip install -q dash-cytoscape')
-
 
 # In[318]:
 
