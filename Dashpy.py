@@ -9,8 +9,8 @@ import pandas as pd
 from jupyter_dash import JupyterDash
 import dash_cytoscape as cyto
 import dash
-import dash_html_components as html
-import dash_core_components as dcc
+from dash import dcc
+from dash import html
 from dash.dependencies import Input, Output
 import plotly.express as px
 import numpy as np
@@ -56,24 +56,6 @@ def reg_test_discharge_fig(Model):
     return reg_test_discharge_fig
 #reg_test_discharge_fig()
 
-
-# In[ ]:
-
-
-
-
-
-# In[7]:
-
-
-
-# Import required libraries
-import pandas as pd
-import dash
-import dash_html_components as html
-import dash_core_components as dcc
-from dash.dependencies import Input, Output
-import plotly.express as px
 
 # Create a dash application
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
