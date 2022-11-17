@@ -77,7 +77,10 @@ def Dashboard():
     import plotly.express as px
 
     # Create a dash application
-    app = dash.Dash(__name__)
+    #app = dash.Dash(__name__)
+    # Create a dash application
+    external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
+    app = JupyterDash(__name__, external_stylesheets=external_stylesheets)
 
     # Build dash app layout
     app.layout = html.Div(children=[ html.H1('Marshyandi River Discharge Simulation',
@@ -155,25 +158,6 @@ def Dashboard():
     # Run the app
     if __name__ == '__main__':
         return app.run_server()
-
-
-# In[ ]:
-
-
-
-
-
-# In[324]:
-
-
-
-Dashboard()
-
-
-# In[325]:
-
-
-Dashboard()
 
 
 # In[ ]:
